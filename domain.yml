@@ -1,0 +1,102 @@
+version: "2.0"
+
+slots:
+  date:
+    type: text
+  facilities:
+    type: text
+
+entities:
+  - date
+  - facilities
+
+
+intents:
+  - introduce_yourself
+  - introduce_hotel
+  - time_query
+  - date_query
+  - location_query
+  - service_time_query
+  - breakfast_time_query
+  - phonecall_service_query
+  - network_connect_query
+  - wifi_service_query
+  - wifi_passwd_query
+  - clean_time_query
+  - check_in_out_service_query
+  - attraction_query
+
+  # default intents
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+
+actions:
+  - action_time_query
+  - action_date_query
+  - action_location_query
+  - action_service_time_query
+
+
+responses:
+  utter_location:
+    - text: "请问地点是什么？"
+
+  utter_introduce_myself:
+    - text: "尊敬的客人，您好！我是您贴心的助理机器人，您可以叫我小宝！如果您在入住酒店当中遇到问题可以随时找我哦~"
+
+  utter_introduce_hotel:
+    - text: "香格里拉的故事始于1971年，我们的第一家豪华酒店在新加坡开业。"
+
+  utter_breakfast_time:
+    - text: "早餐供应时间为早上7：00-10：30。"
+
+  utter_phone_number:
+    - text: "前台电话是:0000-0000-0000"
+
+  utter_network_connect:
+    - text: "网络连接步骤如下：...."
+
+  utter_connect_wifi:
+    - text: "Wi-Fi连接步骤如下：...."
+
+  utter_wifi_passwd:
+    - text: "wifi密码是：12345678"
+
+  utter_clean_time:
+    - text: "当您需要打扫房间的时候，请直接告知前台或服务员即可。"
+
+  utter_attraction:
+    - text: "酒店周边的景点有：加井岛（酒店沙滩对面即是加井岛，乘船15分钟可到达）、分界洲岛（15分钟车程）、醉美海边凤凰九里书屋（5分钟车程）、西岭山生态体验公园（步行5分钟）、石梅湾华润游艇会（8分钟车程）、兴隆热带植物园（20分钟车程）、兴隆隆苑有机咖啡园（20分钟车程）、东山岭（30分钟车程）"
+
+  ############ default intents ############
+  utter_greet:
+    - text: "您好！"
+    - text: "尊敬的客人您好，欢迎莅临本酒店，很高兴为您服务！"
+    - text: "你好呀，很高兴见到你！"
+
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "Great, carry on!"
+
+  utter_goodbye:
+    - text: "再见！祝您生活愉快~"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

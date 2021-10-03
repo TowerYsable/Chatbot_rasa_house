@@ -1,0 +1,369 @@
+version: "2.0"
+
+nlu:
+  ############ defined intents ############
+  - intent: introduce_yourself
+    examples: |
+      - 介绍自己
+      - 介绍下自己
+      - 自我介绍
+      - 自我介绍一下
+      - 你是谁
+      - 你叫什么
+      - 你是
+      - 你的名字是什么
+      - 你的名字
+      - 你叫啥
+      - 说一下自己
+      - 关于你
+
+  - intent: introduce_hotel
+    examples: |
+      - 介绍酒店
+      - 介绍下酒店
+      - 关于这家酒店
+      - 酒店介绍
+      - 酒店
+      - 这家酒店
+      - 酒店的故事
+      - 讲一下酒店
+      - 这是什么酒店
+      - 这酒店是什么
+
+#  - intent: time_query
+#    examples: |
+#      - 几点钟了，现在
+#      - 什么时候了，现在
+#      - 现在时间是
+#      - 什么点数了，现在
+#      - 几点了，现在
+#      - 现在什么时候了
+#      - 什么时间了，现在
+#      - 现在时间是多少
+#      - 几点了
+#      - 现在是什么时间
+#      - 时间是
+#      - 现在几点
+#
+#  - intent: date_query
+#    examples: |
+#      - 几号，[今天](date)
+#      - [今天](date)日期是
+#      - 日期是多少，[昨天](date)
+#      - [今天](date)几号
+#      - [明天](date)星期几
+#      - 日期，[今天](date)
+#      - 什么日期啊，[今天](date)
+#      - 现在几月份
+#      - [今天](date)周几
+#      - 周几啊，[明天](date)
+#      - [明天](date)多少号
+#      - 现在几月几号啊
+
+
+#
+#  - intent: weather_query
+#    examples: |
+#      - [今天](date)天气怎样
+#      - [今天](date)温度热不热
+#      - [明天](date)晒吗，太阳
+#      - 太阳大不大，[明天](date)
+#      - 气温怎样啊，[明天](date)
+#      - 会不会下雨啊，[明天](date)
+#      - 温度
+#      - [明天](date)会不会下雨
+#      - 天气如何啊，[明天](date)
+#      - [明天](date)天气好不好
+#      - 下雨吗
+#      - 会不会下雨啊，[今天](date)
+#      - [明天](date)下雨吗
+#      - [明天](date)下雨不
+#      - [今天](date)温度如何
+#      - 气温
+#      - [今天](date)气温如何
+#      - 气温多高，[明天](date)
+#      - 热不热啊，[今天](date)
+#      - [明天](date)气温多少
+#      - 下雨不，[今天](date)
+#      - [今天](date)热吗
+#      - 太阳晒不晒，[今天](date)
+
+
+  - intent: location_query
+    examples: |
+      - 咋走啊，[大堂](facilities)
+      - [餐厅](facilities)在哪里
+      - 怎样才能去[餐厅](facilities)
+      - [商店](facilities)，几楼啊
+      - 哪条路可以去[大堂](facilities)
+      - 哪里有[餐厅](facilities)
+      - 该往哪里走才能到[游泳池](facilities)
+      - 要去[餐厅](facilities)我要怎么走
+      - 哪里才能去[餐厅](facilities)
+      - 几楼有[健身房](facilities)
+      - 如何去[餐厅](facilities)
+      - 你知道怎么去[餐厅](facilities)吗
+      - [餐厅](facilities)的位置在哪里
+      - 去几楼才能到[餐厅](facilities)
+      - 怎么去啊，[健身房](facilities)
+      - 我要怎么去[游泳池]facilities)
+      - [健身房](facilities)要如何去
+      - [健身房](facilities)如何才能去到那
+      - [健身房](facilities)该咋走
+      - 该朝哪走啊，[健身房](facilities)
+
+
+
+
+  - intent: service_time_query
+    examples: |
+      - 服务时间是什么时候，[商店](facilities)
+      - [餐厅](facilities)什么时候就不能使用了
+      - 几点可以使用，[游泳池](facilities)
+      - [健身房](facilities)停止营业的时间是
+      - [健身房](facilities)什么时候关门
+      - [餐厅](facilities)几点开门
+      - [商店](facilities)的营业时间是什么时候
+      - [健身房](facilities)什么时候开门
+      - 啥时能用[健身房](facilities)啊
+      - [游泳池](facilities)，啥时能用啊
+      - [健身房](facilities)的使用时间是
+      - [健身房](facilities)什么时候可以使用
+      - 营业时间， [餐厅](facilities)
+      - 什么时候可以用[游泳池](facilities)啊
+      - [健身房](facilities)的关门时间是
+      - [游泳池](facilities)能使用多久
+      - [健身房](position)开门时间是多少
+  - intent: breakfast_time_query
+    examples: |
+      - 几点提供早餐
+      - 什么时候能吃到早餐
+      - 怎么提供早餐
+      - 早餐时间
+      - 什么时候提供早餐
+      - 早餐服务
+      - 什么时候吃早餐
+      - 几点吃早餐
+      - 几点有早餐
+  - intent: phonecall_service_query
+    examples: |
+      - 大堂电话多少
+      - 怎么联系前台
+      - 号码多少啊，大堂的
+      - 前台电话号码
+      - 电话多少，前台
+      - 前台的那个号码是多少
+      - 打电话给前台
+      - 服务电话多少
+      - 大堂服务电话
+      - 电话多少，大堂
+      - 打电话给大堂
+      - 多少啊，前台电话
+
+  - intent: network_connect_query
+    examples: |
+      - 网络怎么弄
+      - 联网怎么弄
+      - 网络连接
+      - 怎么上网
+      - 这里可以联网吗
+      - 怎样才能接上网络
+      - 可以连接网络吗，这里
+      - 怎么连接网络
+      - 网络该咋连
+
+  - intent: wifi_service_query
+    examples: |
+      - 怎么连接wifi
+      - 怎么连wifi
+      - 如何连接wifi
+      - 连接wifi的方法
+      - 连接wifi的步骤
+      - 怎么联网
+      - 如何连接网络
+      - 怎么上网
+  - intent: wifi_passwd_query
+    examples: |
+      - wifi密码是多少
+      - 密码是多少
+      - 网络密码是多少
+      - 连网的密码是多少
+      - 联网的密码是多少
+  - intent: clean_time_query
+    examples: |
+      - 什么时候打扫房间
+      - 服务员什么时候来打扫房间
+      - 几点打扫房间
+      - 打扫房间是什么时候
+      - 清理房间的时间
+      - 打扫房间的时间
+      - 请问几点开始打扫房间
+      - 打扫房间
+      - 清理房间
+      - 什么时候打扫
+
+  - intent: check_in_out_service_query
+    examples: |
+      - 什么时候退房
+      - 退房的时间是什么时候
+      - 什么时候入住
+      - 入住的时间是什么时候
+      - 几点退房
+      - 几点可以住进来
+      - 退房时间
+      - 入住时间
+      - 几点可以入住
+      - 几点可以退房
+      - 最晚退房时间
+      - 最晚入住时间
+      - 入住是在什么时间
+      - 退房是在什么时间
+      - 啥时候可以住啊
+      - 啥时候退房啊
+
+  - intent: attraction_query
+    examples: |
+      - 附近有什么好玩的
+      - 附近有什么好玩的地方
+      - 好玩的地方
+      - 周边好玩的地方
+      - 好玩的去处
+      - 哪里比较好玩
+      - 哪里有好康的
+      - 附近好玩的
+      - 有好玩的地方吗
+      - 在哪里能游玩
+      - 我可以去哪里游玩
+      - 去哪里玩
+      - 有什么好地方
+      - 玩的地方推荐
+      - 推荐好玩的地方
+
+  ############ default intents ############
+  - intent: greet
+    examples: |
+      - 你好
+      - 嗨
+      - 您好
+      - 早上好
+      - 下午好
+      - 晚上好
+      - 早
+      - 冲
+      - 你好吗
+      - 你好呀
+      - 早上好
+      - 早安
+      - 晚安
+      - 你好
+      - 贵安
+      - 哈喽
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - 明天见
+      - 下次再见
+      - 有缘再见
+      - 江湖再见
+      - 待会见
+      - 回见
+      - 回头见
+      - 拜拜
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - 是
+      - 对
+      - 好
+      - 没问题
+      - 搞得定
+      - ok了
+      - 解决了
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - 不
+      - 不对
+      - 不能
+      - 不要
+      - 不用
+      - 不是的
+      - 不用这样吧
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?

@@ -1,0 +1,200 @@
+version: "2.0"
+
+stories:
+  - story: one
+    steps:
+      - intent: introduce_yourself
+      - action: utter_introduce_myself
+      - intent: introduce_hotel
+      - action: utter_introduce_hotel
+      - intent: time_query
+      - action: action_time_query
+      - intent: service_time_query
+        entities:
+          - facilities: "游泳池"
+      - slot_was_set:
+          - facilities: "游泳池"
+      - action: action_service_time_query
+
+
+  - story: two
+    steps:
+      - intent: introduce_yourself
+      - action: utter_introduce_myself
+      - intent: date_query
+      - action: action_date_query
+      - intent: breakfast_time_query
+      - action: utter_breakfast_time
+      - intent: location_query
+        entities:
+          - facilities: "游泳池"
+      - slot_was_set:
+          - facilities: "游泳池"
+      - action: action_location_query
+      - action: action_service_time_query
+      - intent: phonecall_service_query
+      - action: utter_phone_number
+
+  - story: three
+    steps:
+      - intent: introduce_hotel
+      - action: utter_introduce_hotel
+      - intent: clean_time_query
+      - action: utter_clean_time
+      - intent: service_time_query
+        entities:
+          - facilities: "餐厅"
+      - slot_was_set:
+          - facilities: "餐厅"
+      - action: action_service_time_query
+      - intent: attraction_query
+      - action: utter_attraction
+
+  - story: four
+    steps:
+      - intent: location_query
+        entities:
+          - facilities: "商店"
+      - slot_was_set:
+          - facilities: "商店"
+      - action: action_location_query
+      - intent: time_query
+      - action: action_time_query
+      - intent: network_connect_query
+      - action: utter_network_connect
+      - intent: wifi_service_query
+      - action: utter_connect_wifi
+      - intent: wifi_passwd_query
+      - action: utter_wifi_passwd
+
+  - story: five
+    steps:
+      - intent: wifi_passwd_query
+      - action: utter_wifi_passwd
+      - intent: attraction_query
+      - action: utter_attraction
+      - intent: location_query
+        entities:
+          - facilities: "餐厅"
+      - slot_was_set:
+          - facilities: "餐厅"
+      - action: action_location_query
+      - intent: introduce_hotel
+      - action: utter_introduce_hotel
+
+  - story: six
+    steps:
+      - intent: network_connect_query
+      - action: utter_network_connect
+      - intent: introduce_yourself
+      - action: utter_introduce_myself
+      - intent: introduce_hotel
+      - action: utter_introduce_hotel
+      - intent: attraction_query
+      - action: utter_attraction
+      - intent: location_query
+        entities:
+          - facilities: "餐厅"
+      - slot_was_set:
+          - facilities: "餐厅"
+      - action: action_location_query
+
+
+  - story: seven
+    steps:
+      - intent: network_connect_query
+      - action: utter_network_connect
+      - intent: service_time_query
+        entities:
+          - facilities: "商店"
+      - slot_was_set:
+          - facilities: "商店"
+      - action: action_service_time_query
+      - intent: date_query
+      - action: action_date_query
+      - intent: phonecall_service_query
+      - action: utter_phone_number
+
+  - story: eight
+    steps:
+      - intent: attraction_query
+      - action: utter_attraction
+      - intent: wifi_service_query
+      - action: utter_connect_wifi
+      - intent: phonecall_service_query
+      - action: utter_phone_number
+      - intent: location_query
+        entities:
+          - facilities: "健身房"
+      - slot_was_set:
+          - facilities: "健身房"
+      - action: action_location_query
+      - intent: clean_time_query
+      - action: utter_clean_time
+
+  - story: nine
+    steps:
+      - intent: date_query
+      - action: action_date_query
+      - intent: introduce_yourself
+      - action: utter_introduce_myself
+      - intent: wifi_service_query
+      - action: utter_connect_wifi
+      - intent: breakfast_time_query
+      - action: utter_breakfast_time
+
+  - story: ten
+    steps:
+      - intent: introduce_hotel
+      - action: utter_introduce_hotel
+      - intent: phonecall_service_query
+      - action: utter_phone_number
+      - intent: wifi_passwd_query
+      - action: utter_wifi_passwd
+      - intent: date_query
+      - action: action_date_query
+
+  - story: eleven
+    steps:
+    - intent: service_time_query
+      entities:
+        - facilities: "健身房"
+    - slot_was_set:
+        - facilities: "健身房"
+    - action: action_service_time_query
+    - intent: attraction_query
+    - action: utter_attraction
+    - intent: wifi_service_query
+    - action: utter_connect_wifi
+    - intent: time_query
+    - action: action_time_query
+
+
+
+    ############ default story ############
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
